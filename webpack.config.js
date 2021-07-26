@@ -1,7 +1,7 @@
 module.exports = {
     mode: "production",
     devServer: {
-        contentBase: './dist'
+        contentBase: './examples/'
     },
     output: {
         filename: 'p5.HeightToNormal.js'
