@@ -13,6 +13,7 @@ function preload() {
 
 function setup() {
     createCanvas(500, 500, WEBGL);
+    pixelDensity(1);
 
     h2n = new HeightToNormal(heightmap.width, heightmap.height);
     normalmap = h2n.get(heightmap);

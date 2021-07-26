@@ -94,6 +94,7 @@ void main(){
             p.setup = _ => {
                 _p = p;
                 renderer = _p.createCanvas(w, h, _p.WEBGL);
+                _p.pixelDensity(1);
 
                 // don't pollute the DOM
                 renderer.canvas.style.display = 'none';

@@ -9,6 +9,7 @@ let gfx;
 
 function setup() {
     createCanvas(500, 500, WEBGL);
+    pixelDensity(1);
 
     gfx = createGraphics(width, height);
     gfx.background(0);
