@@ -1,5 +1,6 @@
 (function () {
-    let p5 = typeof window.p5 === typeof undefined ? require('p5') : window.p5;
+    // let p5 = typeof window.p5 === typeof undefined ? require('p5') : window.p5;
+    let p5 = window.p5;
 
     let vert = `
 #ifdef GL_ES
