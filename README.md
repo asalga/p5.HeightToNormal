@@ -1,6 +1,8 @@
 # p5.HeightToNormal
 Convert a height map to a normal map
 
+<img src="img.png" width="200"/>
+
 ## Usage
 ```js
  new p5(p => {
@@ -35,7 +37,7 @@ Convert a height map to a normal map
                     vector have a stronger influence.
                     Default value is 7.
         */
-        normalMap = h2n.get(gfx, 2, 7);
+        let normalMap = h2n.get(gfx, 2, 7);
         p.image(normalMap, 0, 0);
     }
 
