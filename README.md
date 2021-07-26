@@ -13,7 +13,7 @@ Convert a height map to a normal map
         p.background(0);
 
         gfx = p.createGraphics(p.width, p.height);
-        h2n = new p.Height2Normal(p.width, p.height);
+        h2n = new p.HeightToNormal(p.width, p.height);
     }
 
     p.draw = _ => {

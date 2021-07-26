@@ -85,7 +85,7 @@ void main(){
 	gl_FragColor = vec4(n.rg * 0.5 + 0.5, n.b, col.a);
 }`;
 
-    p5.prototype.Height2Normal = function (w, h) {
+    p5.prototype.HeightToNormal = function (w, h) {
 
         let _p, renderer, sh;
 
