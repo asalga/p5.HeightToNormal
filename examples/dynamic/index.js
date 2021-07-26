@@ -8,14 +8,14 @@ let sh;
 let gfx;
 
 function setup() {
-    createCanvas(500, 500, WEBGL);
+    createCanvas(1080, 1080, WEBGL);
     pixelDensity(1);
 
     gfx = createGraphics(width, height);
     gfx.background(0);
 
     gfx.fill(200, 100);
-    gfx.textSize(150);
+    gfx.textSize(450);
     gfx.textAlign(CENTER, CENTER);
     gfx.text('p5.js', width / 2, height / 2);
 
@@ -49,3 +49,5 @@ function mouseDragged() {
         gfx.ellipse(mouseX, mouseY, i * 3);
     }
 }
+
+function keyPressed() { if (key == 's') save(); }

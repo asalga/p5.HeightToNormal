@@ -14,7 +14,7 @@ void main(){
 
 	vec2 p = vec2(gl_FragCoord);
 
-	float mx = cursor.x - p.x;
+	float mx = p.x - cursor.x;
 	float my = resolution.y - cursor.y - p.y;
 	float mz = resolution.x * 0.25;
 
