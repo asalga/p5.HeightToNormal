@@ -2,8 +2,10 @@
 <html>
 
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
 
     <title>p5.HeightToNormal</title>
 
@@ -27,7 +29,7 @@
                 gfx.strokeWeight(3);
                 gfx.stroke(100);
                 gfx.fill(255);
-                gfx.ellipse(p.mouseX, p.mouseY, 150);
+                gfx.ellipse(p.mouseX || p.width / 2, p.mouseY || p.height / 2, 150);
                 gfx.pop();
 
                 /*

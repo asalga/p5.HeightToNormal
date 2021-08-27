@@ -49,8 +49,6 @@ float sampleTex(sampler2D tex, vec2 uv){
 
 vec3 sobel(sampler2D tex, vec2 uv){
 
-    vec3 s = vec3(texture2D(tex, uv));
-
     // image space
     float x = uv.x * float(res.x);
     float y = uv.y * float(res.y);
@@ -91,6 +89,12 @@ void main(){
         let _p, renderer, sh;
 
         new p5(p => {
+
+            // For some reason, these need to be here, otherwise the user's preload
+            // gets called twice and breaks things.
+            p.preload = function () { }
+            p.draw = function () { }
+
             p.setup = _ => {
                 _p = p;
                 renderer = _p.createCanvas(w, h, _p.WEBGL);
@@ -102,9 +106,9 @@ void main(){
                 sh = new p5.Shader(_p._renderer, vert, frag);
                 _p.shader(sh);
                 _p.ortho();
-                _p.translate(-_p.width / 2, -_p.height / 2, 0);
             }
         });
+
         /*
             strength -  strength of the normal
                         values closer to 0 will make z component of vectors
@@ -113,11 +117,14 @@ void main(){
             level - typical values: 5 - 7
         */
         this.get = function (tex, strength = 2, level = 7) {
+            _p.push();
+            _p.translate(-_p.width / 2, -_p.height / 2, 0);
             sh.setUniform('tex', tex);
             sh.setUniform('res', [tex.width, tex.height]);
             sh.setUniform('strength', strength);
             sh.setUniform('level', level);
             _p.rect(0, 0, _p.width, _p.height, 1, 1);
+            _p.pop();
             return renderer;
         }
     }

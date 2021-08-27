@@ -8,11 +8,11 @@ let normalmap;
 let sh;
 
 function preload() {
-    heightmap = loadImage('heightmap.png');
+    heightmap = loadImage('heightmap-face.png');
 }
 
 function setup() {
-    createCanvas(500, 500, WEBGL);
+    createCanvas(heightmap.width, heightmap.height, WEBGL);
     pixelDensity(1);
 
     h2n = new HeightToNormal(heightmap.width, heightmap.height);

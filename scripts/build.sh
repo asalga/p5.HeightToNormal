@@ -1,2 +1,2 @@
 webpack
-cp ./dist/p5.HeightToNormal.js ./examples/
+cp ./dist/p5.textToLoops.js ./examples/
